@@ -5,5 +5,14 @@
  */
 
 module.exports = {
-  /* Your site config here */
-}
+  siteMetadata: {
+    title: "Yadunand Prem",
+  },
+  plugins: [
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      pathToConfigModule: `src/utils/typography`,
+    },
+  ],
+};
