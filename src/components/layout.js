@@ -1,9 +1,11 @@
 import React from "react";
 import { css } from "@emotion/core";
 import Header from "../components/header";
+import Metadata from "./metadata";
 
 const Layout = ({ children }) => (
   <div>
+    <Metadata />
     <Header />
     <div
       css={css`
