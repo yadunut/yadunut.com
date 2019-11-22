@@ -1,0 +1,25 @@
+name: Deploy on Push
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run a one-line script
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }} 
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd services/yadunut.com/website
+            git fetch origin
+            git reset --hard origin/master
+            docker-compose -f docker-compose.prod.yml build --pull
+            docker-compose -f docker-compose.prod.yml up -d
+      
+  
