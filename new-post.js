@@ -11,15 +11,14 @@ function parseDate(date, delimeter = "-") {
 
 function main(argv) {
   if (argv.length < 3) {
-    console.log("Error: Please enter blog title");
+    console.error("Error: Please enter blog title");
     process.exit(1);
   }
   let title = argv[2];
-  let postsDir = path.join(__dirname, `src`, `posts`);
 
   let date = parseDate(new Date());
 
-  let newPostDir = path.join(postsDir, `${date}-${title}`);
+  let newPostDir = path.join(__dirname, `src`, `posts`, `${date}-${title}`);
 
   if (fs.existsSync(newPostDir)) {
     console.log(`Directory exists at ${newPostDir}`);
@@ -44,4 +43,3 @@ title: ${title}
 }
 
 main(process.argv);
-
