@@ -28,13 +28,11 @@ function main(argv) {
   fs.mkdirSync(newPostDir);
   console.log(`Made Directory at ${newPostDir}`);
 
-  let newPostPath = `${path.join(newPostDir, title)}.md`;
+  let newPostPath = `${path.join(newPostDir, `index`)}.md`;
 
   fs.writeFile(
     newPostPath,
     `---
-path: /${title}
-date: ${date}
 title: ${title}
 ---
 `,
