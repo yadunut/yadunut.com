@@ -1,23 +1,13 @@
-import React from "react";
-import { css } from "@emotion/core";
+import React, { Fragment } from "react";
 import Header from "../components/header";
 import Metadata from "./metadata";
+import { css } from "@emotion/core";
 
 const Layout = ({ children }) => (
-  <div>
+  <div css={css``}>
     <Metadata />
     <Header />
-    <div
-      css={css`
-        margin: 0px auto;
-        max-width: 700px;
-        font-size: 18px;
-        color: #333;
-        padding: 0 10px;
-      `}
-    >
-      {children}
-    </div>
+    {children}
   </div>
 );
 

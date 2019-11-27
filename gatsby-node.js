@@ -1,4 +1,5 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require("path");
 
 // Creates a `slug` field in the markdown node, used for site Path
 exports.onCreateNode = ({ node, getNode, actions, graphql }) => {
@@ -9,7 +10,7 @@ exports.onCreateNode = ({ node, getNode, actions, graphql }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
+      value: `posts${slug}`,
     });
     createNodeField({
       node,
@@ -27,7 +28,6 @@ exports.onCreateNode = ({ node, getNode, actions, graphql }) => {
       name: `title`,
       value: node.frontmatter.title,
     });
-    console.log(`Node is `, node);
   }
 };
 
@@ -53,10 +53,9 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const nodes = results.map(node => node.node);
 
   for (const node of nodes) {
-    console.log(`creating node`);
     const slug = node.fields.slug;
     createPage({
-      path: `posts${slug}`,
+      path: slug,
       component: require.resolve("./src/templates/blog-post.js"),
       context: {
         slug: slug,
