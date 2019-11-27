@@ -19,7 +19,6 @@ jobs:
             cd services/yadunut.com/website
             git fetch origin
             git reset --hard origin/master
-            docker-compose -f docker-compose.prod.yml build --pull
-            docker-compose -f docker-compose.prod.yml up -d
+            (docker-compose -f docker-compose.prod.yml build --pull; docker-compose -f docker-compose.prod.yml up -d) &
       
   
