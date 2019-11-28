@@ -1,13 +1,27 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "../components/header";
 import Metadata from "./metadata";
 import { css } from "@emotion/core";
+import { rhythm } from "../utils/typography";
+import MyLink from "./MyLink";
 
 const Layout = ({ children }) => (
-  <div css={css``}>
-    <Metadata />
+  <div
+    css={css`
+      max-width: 1000px;
+      margin: ${rhythm(1)} auto;
+    `}
+  >
     <Header />
-    {children}
+    <div
+      css={css`
+        max-width: 850px;
+        margin: ${rhythm(1)} auto;
+      `}
+    >
+      <Metadata />
+      {children}
+    </div>
   </div>
 );
 

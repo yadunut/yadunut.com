@@ -1,11 +1,21 @@
 import React from "react";
 import Layout from "../components/layout";
-import { Link } from "gatsby";
 
 export default () => (
   <Layout>
-    <h1>Yadunand Prem</h1>
-    <p>This site is currently being built.</p>
-    <Link to="posts">Posts!</Link>
+    <h2>Hello! I'm Yadunand</h2>
+    <p>
+      I'm a Software Engineer based in <em>Singapore</em>. I love tinkering with
+      technology, automating processes and building new things. Currently, I'm
+      doing my internship at <a href="https://Ezidox.com">Ezidox</a>. You can
+      also find me building my own keyboard.
+    </p>
+    <p>
+      If you want to get in touch with me, I can be reached through{" "}
+      <a href="mailto:yadunut@gmail.com">email</a> or{" "}
+      <a href="https://keybase.io/yadunut">keybase</a>. You can also find me on{" "}
+      <a href="https://twitter.com/yadunut">twitter</a>. My projects can be
+      found on my <a href="https://github.com/yadunut">github</a>.
+    </p>
   </Layout>
 );
