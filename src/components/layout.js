@@ -9,6 +9,7 @@ const Layout = ({ children }) => (
   <div
     css={css`
       max-width: 1000px;
+      padding: ${rhythm(1)};
       margin: ${rhythm(1)} auto;
     `}
   >
