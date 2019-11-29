@@ -3,7 +3,6 @@ import Header from "../components/header";
 import Metadata from "./metadata";
 import { css } from "@emotion/core";
 import { rhythm } from "../utils/typography";
-import MyLink from "./MyLink";
 
 const Layout = ({ children }) => (
   <div

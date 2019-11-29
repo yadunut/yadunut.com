@@ -7,8 +7,8 @@ export default () => (
     <p>
       I'm a Software Engineer based in <em>Singapore</em>. I love tinkering with
       technology, automating processes and building new things. Currently, I'm
-      doing my internship at <a href="https://Ezidox.com">Ezidox</a>. You can
-      also find me building my own keyboard.
+      doing my internship at <a href="https://Ezidox.com">Ezidox</a>. I am
+      currently working on building my own keyboard
     </p>
     <p>
       If you want to get in touch with me, I can be reached through{" "}

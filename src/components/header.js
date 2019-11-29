@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { css } from "@emotion/core";
-import { rhythm } from "../utils/typography";
 import MyLink from "./MyLink";
 
 export default () => {
@@ -23,7 +22,7 @@ export default () => {
       `}
     >
       <MyLink>
-        <MyLink to="/"> Yadunand Prem </MyLink>{" "}
+        <MyLink to="/">{site.siteMetadata.title}</MyLink>{" "}
       </MyLink>
       <div>
         <MyLink to="/posts">Posts</MyLink>

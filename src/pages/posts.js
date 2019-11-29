@@ -7,7 +7,7 @@ import { rhythm } from "../utils/typography";
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: [fields___updatedTime] }) {
       edges {
         node {
           excerpt

@@ -12,16 +12,16 @@ exports.onCreateNode = ({ node, getNode, actions, graphql }) => {
       name: `slug`,
       value: `posts${slug}`,
     });
-    createNodeField({
-      node,
-      name: `createdTime`,
-      value: new Date(slug.substr(1, 10)),
-    });
     const fileNode = getNode(node.parent);
     createNodeField({
       node,
       name: `updatedTime`,
       value: new Date(fileNode.modifiedTime),
+    });
+    createNodeField({
+      node,
+      name: `createdTime`,
+      value: new Date(fileNode.birthTime),
     });
     createNodeField({
       node,
