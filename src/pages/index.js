@@ -12,7 +12,7 @@ export default () => (
     </p>
     <p>
       If you want to get in touch with me, I can be reached through{" "}
-      <a href="mailto:yadunut@gmail.com">email</a> or{" "}
+      <a href="mailto:yadunand@yadunut.com">email</a> or{" "}
       <a href="https://keybase.io/yadunut">keybase</a>. You can also find me on{" "}
       <a href="https://twitter.com/yadunut">twitter</a>. My projects can be
       found on my <a href="https://github.com/yadunut">github</a>.
