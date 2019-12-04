@@ -1,7 +1,7 @@
 import Typography from "typography";
 import githubTheme from "typography-theme-github";
 
-githubTheme.baseFontSize = "18px";
+githubTheme.baseFontSize = "16px";
 
 const typography = new Typography(githubTheme);
 

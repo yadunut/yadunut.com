@@ -11,6 +11,9 @@ export const query = graphql`
       edges {
         node {
           excerpt
+          frontmatter {
+            draft
+          }
           fields {
             title
             slug
@@ -23,7 +26,10 @@ export const query = graphql`
 `;
 
 export default ({ data }) => {
-  const postsData = data.allMarkdownRemark.edges.map(node => node.node);
+  let postsData = data.allMarkdownRemark.edges.map(node => node.node);
+  if (process.env.NODE_ENV === "production") {
+    postsData = postsData.filter(node => node.frontmatter.draft !== true);
+  }
   const posts = postsData.map(post =>
     Post({
       slug: post.fields.slug,

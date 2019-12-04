@@ -33,6 +33,7 @@ function main(argv) {
     newPostPath,
     `---
 title: ${title}
+draft: true
 ---
 `,
     err => {

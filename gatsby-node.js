@@ -31,14 +31,19 @@ exports.onCreateNode = ({ node, getNode, actions, graphql }) => {
   }
 };
 
-exports.createPages = async ({ actions: { createPage }, graphql }) => {
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
   const {
     data: {
-      allMarkdownRemark: { edges: results },
+      allMarkdownRemark: { edges: nodes },
     },
   } = await graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark${
+        process.env.NODE_ENV == "production"
+          ? "(filter: { frontmatter: { draft: { ne: true } } })"
+          : ""
+      } {
         edges {
           node {
             fields {
@@ -50,16 +55,12 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     }
   `);
 
-  const nodes = results.map(node => node.node);
-
-  for (const node of nodes) {
-    const slug = node.fields.slug;
+  for (let node of nodes) {
+    node = node.node;
     createPage({
-      path: slug,
+      path: node.fields.slug,
       component: require.resolve("./src/templates/blog-post.js"),
-      context: {
-        slug: slug,
-      },
+      context: { slug: node.fields.slug },
     });
   }
 };

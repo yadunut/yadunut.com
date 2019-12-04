@@ -22,7 +22,6 @@ export default ({ data }) => {
     html,
     fields: { title, createdTime, updatedTime },
   } = data.markdownRemark;
-  console.log(data);
 
   return (
     <Layout>
